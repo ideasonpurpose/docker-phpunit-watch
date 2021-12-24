@@ -1,6 +1,6 @@
 # This action will push version-tagged and latest images to Docker Hub
 # This requires three secrets to be ste, the first two should be stored in Organization
-# Secrets, the last is a per-repository secret.  
+# Secrets, the last is a per-repository secret.
 #   DOCKER_HUB_USERNAME: The Docker Hub username
 #   DOCKER_HUB_ACCESS_TOKEN: Instead of a password
 #   DOCKER_REPO_NAME: The full image name as it appears on Docker Hub
@@ -46,7 +46,7 @@ jobs:
         run: |
           gh release create v${TAG}
 
-      -        name: Docker meta
+      - name: Docker meta
         id: meta
         uses: docker/metadata-action@v3
         with:
