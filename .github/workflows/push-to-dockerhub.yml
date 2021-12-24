@@ -33,11 +33,11 @@ jobs:
         run: |
           echo "TAG=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
 
-      - name: Build image from Dockerfile
-        run: docker build . --tag ${DOCKER_REPO_NAME}
+      # - name: Build image from Dockerfile
+      #   run: docker build . --tag ${DOCKER_REPO_NAME}
 
-      - name: "Tag image with version"
-        run: docker tag ${DOCKER_REPO_NAME} ${DOCKER_REPO_NAME}:${TAG}
+      # - name: "Tag image with version"
+      #   run: docker tag ${DOCKER_REPO_NAME} ${DOCKER_REPO_NAME}:${TAG}
 
       - name: Create GitHub release
         if: ${{ contains(github.ref, 'refs/tags/') }}
@@ -51,7 +51,7 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           # list of Docker images to use as base name for tags
-          images: ${DOCKER_REPO_NAME}
+          images: ${{ DOCKER_REPO_NAME }}
           # generate Docker tags based on the following events/attributes
           tags: |
             type=semver,pattern={{version}}
