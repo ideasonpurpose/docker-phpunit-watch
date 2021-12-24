@@ -1,6 +1,6 @@
 # PHP Watch Docker Image
 
-#### Version 0.1.0
+#### Version 0.1.1
 
 A Docker image for watching files and running PHPUnit tests when files change. Uses [entr](http://eradman.com/entrproject/) to watch files, then runs [PHPUnit](https://phpunit.de/) from the PHP CLI.
 
