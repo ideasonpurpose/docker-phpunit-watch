@@ -62,3 +62,7 @@ To iterate on this project locally, build the image using the same name as the D
 ```sh
 docker build . --tag ideasonpurpose/phpunit-watch:dev
 ```
+
+### Repo Secrets
+
+The GitHub actions for this project require both a DockerHub Access Token and the account password. This is due to Docker Hub not yet supporting Access Tokens for the description API (see [peter-evans/dockerhub-description#10](https://github.com/peter-evans/dockerhub-description/issues/10)).
