@@ -67,4 +67,5 @@ CMD ["phpunit"]
 #   test:
 #     working_dir: /apt/tests
 # ```
-# dockerhub token: 7eed87ef-56ad-4d3d-9a1b-3c2b80ca1596
+
+

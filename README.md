@@ -2,11 +2,15 @@
 
 #### Version 0.1.4
 
-A Docker image for watching files and running PHPUnit tests when files change. Uses [entr](http://eradman.com/entrproject/) to watch files, then runs [PHPUnit](https://phpunit.de/) from the PHP CLI.
+[![dockeri.co](https://dockeri.co/image/ideasonpurpose/phpunit-watch)](https://hub.docker.com/r/ideasonpurpose/phpunit-watch)
+
+## About This Project
+
+This Docker watches files then runs PHPUnit tests when those files change. Files are watched with [entr](http://eradman.com/entrproject/), then tests are run with [PHPUnit](https://phpunit.de/) built on the the PHP cli base image.
 
 ## Using with Docker Compose
 
-Craete a simple Docker Compose service:
+Create a simple Docker Compose service:
 
 ```yaml
 services:
@@ -16,7 +20,7 @@ services:
       - ./:/app
 ```
 
-Then run tests with `docker compose run test` or watch for changes with
+Then run tests with `docker compose run test` or watch for changes with `docker compose run test watch`.
 
 ### Package.json scripts
 
@@ -35,7 +39,7 @@ The default working directory is `/app`, mount your project's test files there. 
 
 ## Basic Docker command
 
-The plain Docker command to run this image looks like this:
+The Docker command to directly run this image looks like this:
 
 ```sh
 docker run --rm -v "${PWD}:/app" ideasonpurpose/phpunit-watch:dev watch
