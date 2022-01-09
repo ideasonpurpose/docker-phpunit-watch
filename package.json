@@ -1,6 +1,6 @@
 {
-  "name": "docker-phpunit-watch",
   "version": "0.1.4",
+  "name": "docker-phpunit-watch",
   "description": "A Docker image for watching files and running PHPUnit tests when files change.",
   "keywords": [
     "phpunit",
@@ -9,6 +9,7 @@
     "php",
     "docker"
   ],
+  "type": "module",
   "homepage": "https://github.com/ideasonpurpose/docker-phpunit-watch#readme",
   "bugs": {
     "url": "https://github.com/ideasonpurpose/docker-phpunit-watch/issues"
@@ -28,16 +29,20 @@
   "dependencies": {
     "auto-changelog": "^2.3.0",
     "prettier": "^2.5.1",
-    "version-everything": "^0.6.4"
+    "version-everything": "^0.7.2"
   },
   "auto-changelog": {
     "package": true,
     "backfillLimit": 7
   },
   "version-everything": {
+    "prefix": "ideasonpurpose/phpunit-watch:",
     "files": [
       "README.md",
       "Dockerfile"
-    ]
+    ],
+    "json": {
+      "sort": true
+    }
   }
 }
