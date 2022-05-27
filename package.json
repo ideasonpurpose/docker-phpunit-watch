@@ -1,5 +1,5 @@
 {
-  "version": "0.1.5",
+  "version": "0.2.0",
   "name": "docker-phpunit-watch",
   "description": "A Docker image for watching files and running PHPUnit tests when files change.",
   "keywords": [
