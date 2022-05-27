@@ -34,6 +34,9 @@ RUN curl -L https://getcomposer.org/installer | php \
 # Global install PHPUnit
 RUN composer global require phpunit/phpunit --prefer-dist
 
+# Global install Kint debugger
+RUN composer global require kint-php/kint --prefer-dist
+
 RUN echo '#!/bin/bash' > /usr/local/bin/watch \
     && echo "find {src,tests} -name '*.php' | entr phpunit" >> /usr/local/bin/watch \
     && chmod +x /usr/local/bin/watch
