@@ -19,6 +19,10 @@ RUN apt-get update -yqq \
     && docker-php-ext-install zip \
     && rm -rf /var/lib/apt/lists/
 
+# Enable inotify workaround for entr for macOS and WSL1
+# https://github.com/eradman/entr#docker-and-wsl
+ENV ENTR_INOTIFY_WORKAROUND=1
+
 # Remove 10 MB /usr/src/php.tar.xz file. Unnecesary since we never update PHP without rebuilding.
 # Ref: https://github.com/docker-library/php/issues/488
 RUN rm /usr/src/php.tar.xz /usr/src/php.tar.xz.asc
