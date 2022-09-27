@@ -2,7 +2,8 @@
 
 #### Version 0.2.0
 
-[![dockeri.co](https://dockeri.co/image/ideasonpurpose/phpunit-watch)](https://hub.docker.com/r/ideasonpurpose/phpunit-watch)
+[![Docker Pulls](https://img.shields.io/docker/pulls/ideasonpurpose/phpunit-watch)](https://hub.docker.com/r/ideasonpurpose/phpunit-watch)
+
 
 ## About This Project
 
@@ -65,4 +66,9 @@ docker build . --tag ideasonpurpose/phpunit-watch:dev
 
 ### Repo Secrets
 
-The GitHub actions for this project require both a DockerHub Access Token and the account password. This is due to Docker Hub not yet supporting Access Tokens for the description API (see [peter-evans/dockerhub-description#10](https://github.com/peter-evans/dockerhub-description/issues/10)).
+The GitHub Actions for this project require both a DockerHub Access Token and the account password. This is due to Docker Hub not yet supporting Access Tokens for the description API (see [peter-evans/dockerhub-description#10](https://github.com/peter-evans/dockerhub-description/issues/10)).
+
+
+#### Brought to you by IOP
+
+<a href="https://www.ideasonpurpose.com"><img src="https://raw.githubusercontent.com/ideasonpurpose/ideasonpurpose/master/IOP_monogram_circle_512x512_mint.png" height="44" align="top" alt="IOP Logo"></a><img src="https://raw.githubusercontent.com/ideasonpurpose/ideasonpurpose/master/spacer.png" align="middle" width="4" height="54"> This project is actively developed and used in production at <a href="https://www.ideasonpurpose.com">Ideas On Purpose</a>.
