@@ -41,9 +41,10 @@ RUN curl -L https://phar.phpunit.de/phpunit-10.phar -o /usr/local/bin/phpunit \
 RUN echo '<?php' > /usr/local/lib/debug_loader.php
 
 # Dowload and require Kint phar
-RUN curl -L https://raw.githubusercontent.com/kint-php/kint/master/build/kint.phar -o /usr/local/lib/kint.phar \
-    && chmod +x /usr/local/lib/kint.phar \
-    && echo 'require "/usr/local/lib/kint.phar";' >> /usr/local/lib/debug_loader.php
+# TODO: disabled for now, trying Sage instead
+# RUN curl -L https://raw.githubusercontent.com/kint-php/kint/master/build/kint.phar -o /usr/local/lib/kint.phar \
+#     && chmod +x /usr/local/lib/kint.phar \
+#     && echo 'require "/usr/local/lib/kint.phar";' >> /usr/local/lib/debug_loader.php
 
 # Dowload and require Sage phar
 RUN curl -L https://github.com/php-sage/sage/raw/main/sage.phar -o /usr/local/lib/sage.phar \
