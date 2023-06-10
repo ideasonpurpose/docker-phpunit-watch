@@ -56,6 +56,16 @@ To see coverage in VSCode with the [Coverage Gutters](https://marketplace.visual
 }
 ```
 
+## Upgrading phpunit.xml
+
+For projects set up on an earlier version of PHPUnit, it will report a deprecated schema error like this:
+
+> 1) Your XML configuration validates against a deprecated schema. Migrate your XML configuration using "--migrate-configuration"!
+
+To upgrade the project's **phpunit.xml** file, open a shell using docker-compose, then run `phpunit --migrate-configuration`
+
+
+
 ## Local Development
 
 To iterate on this project locally, build the image using the same name as the Docker Hub remote. Docker will use the local copy. Specify `dev` if you're using using versions.
