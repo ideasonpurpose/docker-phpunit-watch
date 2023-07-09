@@ -1,9 +1,11 @@
 # PHP Watch Docker Image
 
-#### Version 1.1.1
+<h4> 
+Version 0.0.0
+<!-- PHPUNIT_VERSION -->- PHPUnit 0.0.0
+</h4>
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/ideasonpurpose/phpunit-watch)](https://hub.docker.com/r/ideasonpurpose/phpunit-watch)
-
 
 ## About This Project
 
@@ -62,9 +64,7 @@ For projects set up on an earlier version of PHPUnit, it will report a deprecate
 
 > 1) Your XML configuration validates against a deprecated schema. Migrate your XML configuration using "--migrate-configuration"!
 
-To upgrade the project's **phpunit.xml** file, open a shell using docker-compose, then run `phpunit --migrate-configuration`
-
-
+To upgrade the project's **phpunit.xml** file, run `docker compose exec test phpunit --migrate-configuration`.
 
 ## Local Development
 
@@ -77,7 +77,6 @@ docker build . --tag ideasonpurpose/phpunit-watch:dev
 ### Repo Secrets
 
 The GitHub Actions for this project require both a DockerHub Access Token and the account password. This is due to Docker Hub not yet supporting Access Tokens for the description API (see [peter-evans/dockerhub-description#10](https://github.com/peter-evans/dockerhub-description/issues/10)).
-
 
 #### Brought to you by IOP
 
