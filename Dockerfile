@@ -27,7 +27,7 @@ ENV ENTR_INOTIFY_WORKAROUND=1
 RUN rm /usr/src/php.tar.xz /usr/src/php.tar.xz.asc
 
 # Get the latest release of phpunit from https://phar.phpunit.de/
-RUN curl -L https://phar.phpunit.de/phpunit-0.0.0.phar -o /usr/local/bin/phpunit \
+RUN curl -L https://phar.phpunit.de/phpunit-10.2.3.phar -o /usr/local/bin/phpunit \
     && chmod +x /usr/local/bin/phpunit
 
 # For the time being, we're loading both Kint and Sage
