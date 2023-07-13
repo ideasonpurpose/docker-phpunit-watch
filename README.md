@@ -64,7 +64,7 @@ For projects set up on an earlier version of PHPUnit, it will report a deprecate
 
 > 1) Your XML configuration validates against a deprecated schema. Migrate your XML configuration using "--migrate-configuration"!
 
-To upgrade the project's **phpunit.xml** file, run `docker compose exec test phpunit --migrate-configuration`.
+To upgrade the project's **phpunit.xml** file, run `docker compose run --rm test phpunit --migrate-configuration`.
 
 ## Local Development
 
