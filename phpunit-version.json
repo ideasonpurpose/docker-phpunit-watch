@@ -1,3 +1,4 @@
 {
-  "phpunit": "10.2.3"
+  "note": "Manually update the version number in this file",
+  "phpunit": "10.3.2"
 }
