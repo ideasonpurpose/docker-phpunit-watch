@@ -6,7 +6,7 @@ Version 1.3.2
 </h4>
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/ideasonpurpose/phpunit-watch?logo=docker&logoColor=white)](https://hub.docker.com/r/ideasonpurpose/phpunit-watch)
-[![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/ideasonpurpose/docker-phpunit-watch/push-to-dockerhub.yml?logo=github&logoColor=white&label=Push%20to%20DockerHub)](https://github.com/ideasonpurpose/docker-phpunit-watch/actions/workflows/push-to-dockerhub.yml)
+[![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/ideasonpurpose/docker-phpunit-watch/push-to-dockerhub.yml?logo=github&logoColor=white&label=Push%20to%20DockerHub)](https://github.com/ideasonpurpose/docker-phpunit-watch)
 ## About This Project
 
 This Docker watches files then runs PHPUnit tests when those files change. Files are watched with [entr](http://eradman.com/entrproject/), then tests are run with [PHPUnit](https://phpunit.de/) built on the the PHP cli base image.
