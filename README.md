@@ -7,6 +7,7 @@ Version 1.3.2
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/ideasonpurpose/phpunit-watch?logo=docker&logoColor=white)](https://hub.docker.com/r/ideasonpurpose/phpunit-watch)
 [![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/ideasonpurpose/docker-phpunit-watch/push-to-dockerhub.yml?logo=github&logoColor=white&label=Push%20to%20DockerHub)](https://github.com/ideasonpurpose/docker-phpunit-watch)
+
 ## About This Project
 
 This Docker watches files then runs PHPUnit tests when those files change. Files are watched with [entr](http://eradman.com/entrproject/), then tests are run with [PHPUnit](https://phpunit.de/) built on the the PHP cli base image.
@@ -62,7 +63,7 @@ To see coverage in VSCode with the [Coverage Gutters](https://marketplace.visual
 
 For projects set up on an earlier version of PHPUnit, it will report a deprecated schema error like this:
 
-> 1) Your XML configuration validates against a deprecated schema. Migrate your XML configuration using "--migrate-configuration"!
+> 1. Your XML configuration validates against a deprecated schema. Migrate your XML configuration using "--migrate-configuration"!
 
 To upgrade the project's **phpunit.xml** file, run `docker compose run --rm test phpunit --migrate-configuration`.
 
@@ -77,6 +78,7 @@ docker build . --tag ideasonpurpose/phpunit-watch:dev
 ### Updating the Docker Image's version of PHPUnit
 
 To update the included version of PHPUnit, update the **phpunit-version.json** with the latest release version from [https://phar.phpunit.de/](), then:
+
 1. `npm run bump` to update the Dockerfile and Readme
 2. Commit the version bump and any other changes
 3. `npm version <patch|minor|major>`
