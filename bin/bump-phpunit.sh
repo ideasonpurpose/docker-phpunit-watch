@@ -24,7 +24,7 @@ BLUE="\033[34m"
 MAGENTA="\033[35m"
 CYAN="\033[36m"
 
-PHPUNIT_LATEST=$(jq -r 'to_entries[].value' /app/phpunit-version.json)
+PHPUNIT_LATEST=$(jq -r '.phpunit' /app/phpunit-version.json)
 
 echo -e "✏️   Updating ${GOLD}Dockerfile${RESET} to ${CYAN}phpunit-${PHPUNIT_LATEST}.phar${RESET}"
 sed -i "s/phpunit.de\/phpunit-.*phar/phpunit.de\/phpunit-${PHPUNIT_LATEST}.phar/" /app/Dockerfile

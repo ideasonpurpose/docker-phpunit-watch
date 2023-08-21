@@ -30,7 +30,7 @@ jobs:
 
       - name: Read latest PHPUnit version from phpunit-version.json
         run: |
-          echo "PHPUNIT_VERSION=$(jq -r 'to_entries[].value' phpunit-version.json)" >> $GITHUB_ENV
+          echo "PHPUNIT_VERSION=$(jq -r '.phpunit' phpunit-version.json)" >> $GITHUB_ENV
 
       - name: Create GitHub release
         if: ${{ contains(github.ref, 'refs/tags/') }}
