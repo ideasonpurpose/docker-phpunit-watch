@@ -1,9 +1,9 @@
 # https://hub.docker.com/_/php
 # https://github.com/docker-library/docs/blob/master/php/README.md#supported-tags-and-respective-dockerfile-links
-FROM php:8.2-cli
+FROM php:8.3-cli
 
 # https://pecl.php.net/package/xdebug
-RUN pecl install xdebug-3.2.2 \
+RUN pecl install xdebug-3.3.1 \
     && docker-php-ext-enable xdebug \
     && echo 'xdebug.mode=coverage' > /usr/local/etc/php/conf.d/xdebug.ini \
     && rm -rf /tmp/pear
@@ -27,7 +27,8 @@ ENV ENTR_INOTIFY_WORKAROUND=1
 RUN rm /usr/src/php.tar.xz /usr/src/php.tar.xz.asc
 
 # Get the latest release of phpunit from https://phar.phpunit.de/
-RUN curl -L https://phar.phpunit.de/phpunit-10.3.2.phar -o /usr/local/bin/phpunit \
+# Bump this automatically with `npm run bump`
+RUN curl -L https://phar.phpunit.de/phpunit-10.5.11.phar -o /usr/local/bin/phpunit \
     && chmod +x /usr/local/bin/phpunit
 
 # For the time being, we're loading both Kint and Sage
