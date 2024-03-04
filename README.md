@@ -41,6 +41,8 @@ Add the following two scripts to **package.json** so the tests can be called wit
 
 The default working directory is `/app`, mount your project's test files there. If a project needs to mount a deeper tree, redefine `working_dir` to the test root directory.
 
+Source file chnages in the following directories will re-run tests: `lib`,`src`,`test` and `tests`. 
+
 ## Basic Docker command
 
 The Docker command to directly run this image looks like this:

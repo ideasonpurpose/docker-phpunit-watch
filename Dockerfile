@@ -57,7 +57,7 @@ RUN curl -L https://github.com/php-sage/sage/raw/main/sage.phar -o /usr/local/li
 RUN echo 'auto_prepend_file=/usr/local/lib/debug_loader.php' > /usr/local/etc/php/conf.d/debug.ini;
 
 RUN echo '#!/bin/bash' > /usr/local/bin/watch \
-    && echo "find {src,tests} -name '*.php' | entr phpunit" >> /usr/local/bin/watch \
+    && echo "find {lib,src,test,tests} -name '*.php' | entr phpunit" >> /usr/local/bin/watch \
     && chmod +x /usr/local/bin/watch
 
 USER 1000:1000
