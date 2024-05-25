@@ -3,7 +3,7 @@
 FROM php:8.3-cli
 
 # https://pecl.php.net/package/xdebug
-RUN pecl install xdebug-3.3.1 \
+RUN pecl install xdebug-3.3.2 \
     && docker-php-ext-enable xdebug \
     && echo 'xdebug.mode=coverage' > /usr/local/etc/php/conf.d/xdebug.ini \
     && rm -rf /tmp/pear
@@ -28,7 +28,7 @@ RUN rm /usr/src/php.tar.xz /usr/src/php.tar.xz.asc
 
 # Get the latest release of phpunit from https://phar.phpunit.de/
 # Bump this automatically with `npm run bump`
-RUN curl -L https://phar.phpunit.de/phpunit-10.5.11.phar -o /usr/local/bin/phpunit \
+RUN curl -L https://phar.phpunit.de/phpunit-10.5.20.phar -o /usr/local/bin/phpunit \
     && chmod +x /usr/local/bin/phpunit
 
 # For the time being, we're loading both Kint and Sage

@@ -2,7 +2,7 @@
 
 <h4> 
 Version 1.3.4
-<!-- PHPUNIT_VERSION -->- PHPUnit 10.5.11
+<!-- PHPUNIT_VERSION -->- PHPUnit 10.5.20
 </h4>
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/ideasonpurpose/phpunit-watch?logo=docker&logoColor=white)](https://hub.docker.com/r/ideasonpurpose/phpunit-watch)
