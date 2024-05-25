@@ -3,7 +3,7 @@
 # This script is a part of the ideasonpurpose/docker-phpunit-watch project
 # https://github.com/ideasonpurpose/docker-phpunit-watch
 #
-# Version: 1.3.4
+# Version: 1.3.5
 #
 # For now, manually update the PHPUnit version in phpunit-version.json before running
 #
