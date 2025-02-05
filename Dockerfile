@@ -1,9 +1,9 @@
 # https://hub.docker.com/_/php
 # https://github.com/docker-library/docs/blob/master/php/README.md#supported-tags-and-respective-dockerfile-links
-FROM php:8.3-cli
+FROM php:8.4.3-cli
 
 # https://pecl.php.net/package/xdebug
-RUN pecl install xdebug-3.3.2 \
+RUN pecl install xdebug-3.4.1 \
     && docker-php-ext-enable xdebug \
     && echo 'xdebug.mode=coverage' > /usr/local/etc/php/conf.d/xdebug.ini \
     && rm -rf /tmp/pear
@@ -22,13 +22,13 @@ RUN apt-get update -yqq \
 # https://github.com/eradman/entr#docker-and-wsl
 ENV ENTR_INOTIFY_WORKAROUND=1
 
-# Remove 10 MB /usr/src/php.tar.xz file. Unnecesary since we never update PHP without rebuilding.
+# Remove 10 MB /usr/src/php.tar.xz file. Unnecessary since we never update PHP without rebuilding.
 # Ref: https://github.com/docker-library/php/issues/488
 RUN rm /usr/src/php.tar.xz /usr/src/php.tar.xz.asc
 
 # Get the latest release of phpunit from https://phar.phpunit.de/
 # Bump this automatically with `npm run bump`
-RUN curl -L https://phar.phpunit.de/phpunit-10.5.20.phar -o /usr/local/bin/phpunit \
+RUN curl -L https://phar.phpunit.de/phpunit-11.5.6.phar -o /usr/local/bin/phpunit \
     && chmod +x /usr/local/bin/phpunit
 
 # For the time being, we're loading both Kint and Sage
@@ -42,16 +42,16 @@ RUN curl -L https://phar.phpunit.de/phpunit-10.5.20.phar -o /usr/local/bin/phpun
 # Both Kint and Sage are required from this file since auto_prepend_file only accepts a single file
 RUN echo '<?php' > /usr/local/lib/debug_loader.php
 
-# Dowload and require Kint phar
-# TODO: disabled for now, trying Sage instead
-# RUN curl -L https://raw.githubusercontent.com/kint-php/kint/master/build/kint.phar -o /usr/local/lib/kint.phar \
-#     && chmod +x /usr/local/lib/kint.phar \
-#     && echo 'require "/usr/local/lib/kint.phar";' >> /usr/local/lib/debug_loader.php
+# Download and require Kint phar (update src/debug_loader.php)
+RUN curl -L https://raw.githubusercontent.com/kint-php/kint/master/build/kint.phar -o /usr/local/lib/kint.phar \
+    && chmod +x /usr/local/lib/kint.phar
 
-# Dowload and require Sage phar
-RUN curl -L https://github.com/php-sage/sage/raw/main/sage.phar -o /usr/local/lib/sage.phar \
-    && chmod +x /usr/local/lib/sage.phar \
-    && echo 'require "/usr/local/lib/sage.phar";' >> /usr/local/lib/debug_loader.php
+# Download and require Sage phar
+# NOTE: Was buggy, switching back to Kint
+# RUN curl -L https://github.com/php-sage/sage/raw/main/sage.phar -o /usr/local/lib/sage.phar \
+#     && chmod +x /usr/local/lib/sage.phar
+
+COPY src/debug_loader.php /usr/local/lib
 
 # Load debug libraries
 RUN echo 'auto_prepend_file=/usr/local/lib/debug_loader.php' > /usr/local/etc/php/conf.d/debug.ini;
@@ -68,8 +68,8 @@ CMD ["phpunit"]
 
 
 # This should probably spin off into it's own repository
-# By default, it will run PHPUnit in the current workind directory (from docker compose)
-# That's equavalent to running the image with `phpunit` as the command:
+# By default, it will run PHPUnit in the current working directory (from docker compose)
+# That's equivalent to running the image with `phpunit` as the command:
 #
 #    docker compose run test phpunit
 #
