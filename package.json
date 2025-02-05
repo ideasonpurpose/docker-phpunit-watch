@@ -1,6 +1,6 @@
 {
   "name": "docker-phpunit-watch",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "A Docker image for watching files and running PHPUnit tests when files change.",
   "keywords": [
     "phpunit",
