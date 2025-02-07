@@ -28,7 +28,7 @@ RUN rm /usr/src/php.tar.xz /usr/src/php.tar.xz.asc
 
 # Get the latest release of phpunit from https://phar.phpunit.de/
 # Bump this automatically with `npm run bump`
-RUN curl -L https://phar.phpunit.de/phpunit-11.5.6.phar -o /usr/local/bin/phpunit \
+RUN curl -L https://phar.phpunit.de/phpunit-11.5.7.phar -o /usr/local/bin/phpunit \
     && chmod +x /usr/local/bin/phpunit
 
 # For the time being, we're loading both Kint and Sage

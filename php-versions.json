@@ -1,5 +1,5 @@
 {
   "note": "Manually update the version numbers in this file",
   "php": "8.4.3",
-  "phpunit": "11.5.6"
+  "phpunit": "11.5.7"
 }
