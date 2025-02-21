@@ -1,7 +1,7 @@
 # PHPUnit Watch Docker Image
 
 <h4> 
-Version 1.4.2
+Version 1.4.3
 <!-- PHP_VERSION -->- PHP 8.4.4
 <!-- PHPUNIT_VERSION -->- PHPUnit 11.5.8
 </h4>
@@ -20,7 +20,7 @@ Create a simple Docker Compose service:
 ```yaml
 services:
   test:
-    image: ideasonpurpose/phpunit-watch:1.4.2
+    image: ideasonpurpose/phpunit-watch:1.4.3
     volumes:
       - ./:/app
 ```
