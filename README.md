@@ -3,7 +3,7 @@
 <h4> 
 Version 1.4.3
 <!-- PHP_VERSION -->- PHP 8.4.4
-<!-- PHPUNIT_VERSION -->- PHPUnit 11.5.8
+<!-- PHPUNIT_VERSION -->- PHPUnit 12.0.4
 </h4>
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/ideasonpurpose/phpunit-watch?logo=docker&logoColor=white)](https://hub.docker.com/r/ideasonpurpose/phpunit-watch) 

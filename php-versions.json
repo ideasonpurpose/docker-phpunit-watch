@@ -1,5 +1,5 @@
 {
   "note": "Manually update the versions in this file. Direct links in the Dockerfile",
   "php": "8.4.4",
-  "phpunit": "11.5.8"
+  "phpunit": "12.0.4"
 }
